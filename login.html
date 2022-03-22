@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Control Inventario</title>
+    <title>Iniciar Sesion</title>
 </head>
 <body>
     <header>
@@ -16,9 +16,13 @@
             </ul>
         </nav>
     </header>
-    <h1>Bienvenido a INVCONTROL</h1>
-    <br/><br/>
-    <p>Antes de poder usar el sistema debe iniciar sesion</p>
-    <a href="./login.html">Iniciar Sesion</a> | <a href="./Activacion.html">Activar Cuenta</a>
+    <h1>Iniciar Sesion en INVCONTROL</h1>
+    <br/><br/><br/>
+    <form action="./control.html" method="post">
+        <label for="usuario">Usuario:</label><input type="email" id="usuario" name="usuario"><br>
+        <label for="clave">Contraseña:</label><input type="password" id="clave" name="clave"><br>
+        <input type="submit" value="Iniciar Sesion">
+    </form>
+    
 </body>
 </html>
