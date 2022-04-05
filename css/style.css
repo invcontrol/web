@@ -71,9 +71,6 @@ tr , td {
   color: white;
   text-decoration: none;
 }
-.form .register-form {
-  display: none;
-}
 .container {
   position: relative;
   z-index: 1;
