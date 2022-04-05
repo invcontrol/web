@@ -27,7 +27,7 @@ tr , td {
 .form {
   position: relative;
   z-index: 1;
-  background: #FFFFFF;
+  background: white;
   max-width: 360px;
   margin: 0 auto 100px;
   padding: 45px;
@@ -49,7 +49,7 @@ tr , td {
   font-family: "Roboto", sans-serif;
   text-transform: uppercase;
   outline: 0;
-  background: bisque;
+  background: lightgreen;
   width: 100%;
   border: 0;
   padding: 15px;
@@ -60,15 +60,15 @@ tr , td {
   cursor: pointer;
 }
 .form button:hover,.form button:active,.form button:focus {
-  background: #43A047;
+  background: white;
 }
 .form .message {
   margin: 15px 0 0;
-  color: #b3b3b3;
+  color: white;
   font-size: 12px;
 }
 .form .message a {
-  color: #4CAF50;
+  color: white;
   text-decoration: none;
 }
 .form .register-form {
@@ -108,9 +108,9 @@ tr , td {
   color: #EF3B3A;
 }
 body {
-  background: #76b852; 
-  background: rgb(141,194,111);
-  background: linear-gradient(90deg, rgba(141,194,111,1) 0%, rgba(118,184,82,1) 50%);
+  background: gray; 
+  background: grayrgb(58, 159, 190);
+  background: linear-gradient(90deg, grayrgb(66, 154, 189) 0%, grayrgb(57, 141, 180) 50%);
   font-family: "Roboto", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;      
