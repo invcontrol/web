@@ -6,16 +6,6 @@ body {
     font-size: small;
     font-family: Smokum
 }
-table { 
-    width: 100%;
-    border:1px solid #000;
-}
-tr , td {
-    width: 25%;
-    text-align:  top;
-    vertical-align: top;
-    border: 1px solid #000;
-}
 
 @import url(https://fonts.googleapis.com/css?family=Roboto:300);
 
@@ -111,4 +101,21 @@ body {
   font-family: "Roboto", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;      
+}
+
+.tabla-control {
+    position: relative;
+    z-index: 1;
+    background: #FFFFFF;
+    max-width: 90%;
+    margin: 0 auto 100px;
+    padding: 2%;
+    text-align: center;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+}
+  .tr-control , .td-control {
+    width: 25%;
+    text-align:  top;
+    vertical-align: top;
+    border: 1px solid #000;
 }
