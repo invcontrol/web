@@ -1,5 +1,6 @@
-Proyecto escolar INVCONTROL
-Duoc UC: Plaza Norte
+# Proyecto escolar INVCONTROL
+## Duoc UC: Plaza Norte
 
-Alvaro Acosta
-Ismael Concha
+>Alvaro Acosta
+
+>Ismael Concha
