@@ -172,7 +172,7 @@ body {
   z-index: 1;
   background: #ffffff;
   max-width: 90%;
-  margin: 0 auto 100px;
+  margin: auto;
   padding: 1%;
   margin-top: 2%;
   border-radius: 10px;
@@ -180,18 +180,21 @@ body {
 }
 
 .tabla-control {
-
+  position: relative;
+  display: block;
   z-index: 1;
   background: #ffffff;
-  max-width: 90%;
   padding: 2%;
   text-align: left;
   border: 1px solid #000;
   border-radius: 10px;
+  margin: 2%;
 }
 
 .lista-productos {
   margin-top: 5%;
+  margin: 1%;
+  margin-bottom: 0%;
 }
 
 .tabla-clista {
