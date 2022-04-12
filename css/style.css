@@ -121,14 +121,15 @@ body {
   text-transform: uppercase;
   outline: 0;
   background: rgba(255, 14, 14, 0.712);
-  width: 100%;
+  width: 20%;
+  height: 20%;
   border: 0;
-  padding: 15px;
+  padding: 10px;
   color: black;
   font-size: 14px;
   -webkit-transition: all 0.3 ease;
   transition: all 0.3 ease;
-  border-radius: 30px;
+  border-radius: 10px;
   cursor: pointer;
 }
 
