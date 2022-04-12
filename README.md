@@ -1,6 +1,6 @@
 # Proyecto escolar INVCONTROL
 ## Duoc UC: Plaza Norte
 
->Alvaro Acosta
+>Alvaro Acosta @alvaroacosta2022
 
->Ismael Concha
+>Ismael Concha @ismconcha @iconchav
