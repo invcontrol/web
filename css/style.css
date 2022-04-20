@@ -190,12 +190,19 @@ body {
   border: 1px solid #000;
   border-radius: 10px;
   margin: 2%;
+ 
 }
 
 .lista-productos {
   margin-top: 5%;
-  margin: 1%;
-  margin-bottom: 0%;
+  height:200px;
+  overflow-y:auto;
+  width: 100%;
+  border: 1px solid #000;
+  border-radius: 10px;
+  margin: 2%;
+  padding: 2%;
+  
 }
 
 .tabla-clista {
