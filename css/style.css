@@ -194,12 +194,12 @@ body {
 }
 
 .lista-productos {
-  margin-top: 5%;
-  height:200px;
-  overflow-y:auto;
-  width: 100%;
+  margin: 9%;
+  height: 200px;
+  overflow: auto;
+  width: 96%;
   border: 1px solid #000;
-  border-radius: 10px;
+  border-radius: 11px;
   margin: 2%;
   padding: 2%;
   
