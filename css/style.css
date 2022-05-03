@@ -246,11 +246,14 @@ body {
 
 .cuadro {
   text-align: center;
-  margin: auto;
   margin-top: 5%;
   padding: 10%;
   background-color: #fffFFF;
   border: 1px solid black;
   border-radius: 10px;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+}
+
+.sombra {
   box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
 }
