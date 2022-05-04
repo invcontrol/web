@@ -7,6 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Iniciar Sesion</title>
   <link rel="stylesheet" href="./css/style.css">
+  <script src="script/validacion.js"></script>
 </head>
 
 <body>
@@ -17,18 +18,20 @@
 
       </ul>
     </nav>
+    
   </header>
   <div class="login-page">
     <div class="form">
       <h1>Iniciar Sesión</h1>
-      <form class="login-form">
-        <input type="email" placeholder="Usuario" />
-        <input type="password" placeholder="Contraseña" />
-        <button>login</button>
+      <div class="login-form">
+        <input type="email" placeholder="Usuario" id="txtemail" />
+        <input type="password" placeholder="Contraseña" id="txtclave"/>
+        <button onclick="validaUsuario()">login</button>
         <p class="mensaje">¿No estas registrado?<br><a href="./register.html">Crea una cuenta</a></p>
-      </form>
+      </div>
     </div>
   </div>
+  
 </body>
 
 </html>
