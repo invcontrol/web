@@ -17,15 +17,15 @@
       <a href="./index.html" class="btn btn-primary active" aria-current="page">Inicio</a>
     </div>
   </header>
-  <form class="form">
+  <form class="form" id="form-login" action="./control.html">
     <div class="mb-3">
       <h3>Iniciar Sesión</h3>
     </div>
     <div class="mb-3">
-      <input type="email" placeholder="Usuario" id="txtemail" class="form-control" />
+      <input type="email" placeholder="Usuario" id="txtemail" class="form-control" required/>
     </div>
     <div class="mb-3">
-      <input type="password" placeholder="Contraseña" id="txtclave" class="form-control" />
+      <input type="password" placeholder="Contraseña" id="txtclave" class="form-control" required />
     </div>
     <div class="mb-3">
       <button class="btn">login</button>
@@ -34,6 +34,28 @@
       <p class="mensaje">¿No estas registrado?<br><a href="./register.html">Crea una cuenta</a></p>
     </div>
   </form>
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.3/dist/jquery.validate.js"></script>
+  <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.9/localization/messages_es.js"></script>
+
+  <script>
+    $(document).ready(function() {
+      $("#form-login").validate({
+        rules : {
+          txtemail: {
+            required: true,
+            email: true
+          },
+          txtclave: {
+            required: true,
+            minlength: 10,
+            maxlength: 15
+          }
+        }
+      });
+    });
+  </script>
 
 </body>
 
