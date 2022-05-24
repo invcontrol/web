@@ -20,151 +20,156 @@
             <a href="./retiro.html" class="btn btn-primary" aria-current="page">Retiro Material</a>
         </div>
     </header>
+    <div class="container-fluid">
+        <div class="ar-control">
+            <h1 class="titulo">Control de Producto</h1>
+            <div class="ar-producto">
+                <form>
+                    <div class="row">
+                        <div class="col-sm-5">
+                            <div class="input-group">
+                                <input type="number" class="form-control">
+                                <input type="button" class="btn btn-secondary" value="Buscar">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row align-items-center">
+                        <div class="col">
+                            <label for="txtNombre">Nombre: </label><input class="form-control" type="text"
+                                id="txtNombre">
+                        </div>
+                        <div class="col">
+                            <label for="txtCantidad">Cantidad: </label>
+                            <div class="input-group">
+                                <input class="form-control" type="number" id="txtCantidad">
+                                <select class="form-select" aria-label="Unidad">
+                                    <option value="1">Kg</option>
+                                    <option value="2">Un</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row align-items-center">
+                        <div class="col">
+                            <label for="txtDesc">Descripcion: </label><input class="form-control" id="txtDesc"
+                                type="text">
+                        </div>
+                        <div class="col">
+                            <label for="txtProv">Proveedor: </label><input id="txtProv" class="form-control"
+                                type="text">
+                        </div>
+                    </div>
+                    <div class="row align-items-center">
+                        <div class="col">
+                            <div class=" form-check form-switch">
+                                <label class="form-check-label" for="bajoStockCheck">Alerta Bajo stock</label>
+                                <input class="form-check-input" type="checkbox" role="switch" id="bajoStockCheck">
+                            </div>
+                        </div>
+                        <div class="col">
+                            <label for="txtBajoStock">Nivel Bajo stock: </label><input id="txtBajoStock"
+                                class="form-control" type="text">
+                        </div>
+                    </div>
+                    <div class="row align-items-center">
+                        <div class="col">
+                            <div class=" form-check form-switch">
+                                <label class="form-check-label" for="sobreStockCheck">Alerta Sobre stock</label>
+                                <input class="form-check-input" type="checkbox" role="switch" id="sobreStockCheck">
+                            </div>
+                        </div>
+                        <div class="col">
+                            <label for="txtSobreStock">Nivel Sobre stock: </label><input id="txtSobreStock"
+                                class="form-control" type="text">
+                        </div>
+                    </div>
+                    <div class="row justify-content-center">
+                        <div class="col">
+                            <input class="btn btn-success" type="button" value="Guardar">
+                        </div>
+                        <div class="col">
+                            <input class="btn btn-danger" type="button" value="Eliminar">
+                        </div>
+                    </div>
+                </form>
+                <div>
+                    <h1 class="titulo">Listado de Productos</h1>
+                    <div class="lista-productos">
+                        <table class="tabla-clista">
+                            <thead class="tr-clista">
+                                <tr>
+                                    <th scope="col">Codigo</th>
+                                    <th scope="col">Producto</th>
+                                    <th scope="col">Proveedor</strong></th>
+                                    <th scope="col">Stock</strong></th>
+                                    <th scope="col">Seleccionar</th>
+                                </tr>
+                                <tr class="tr-clista-normal">
+                                    <td class="td-clista">112233</td>
+                                    <td class="td-clista">Palta x Kilo</span></td>
+                                    <td class="td-clista">Guallarauco</td>
+                                    <td class="td-clista"><span class="in-kg"><label>60</label></span></td>
+                                    <td class="td-clista"><input type="radio"></td>
+                                </tr>
+                                <tr class="tr-clista-high">
+                                    <td class="td-clista">223344</td>
+                                    <td class="td-clista">Cebolla x Kilo</span></td>
+                                    <td class="td-clista">Shrek</td>
+                                    <td class="td-clista"><span class="in-kg"><label>45</label></span></td>
+                                    <td class="td-clista"><input type="radio"></td>
+                                </tr>
+                                <tr class="tr-clista-normal">
+                                    <td class="td-clista">334455</td>
+                                    <td class="td-clista">Manzana x Kilo</span></td>
+                                    <td class="td-clista">Guallarauco</td>
+                                    <td class="td-clista"><span class="in-kg"><label>20</label></span></td>
+                                    <td class="td-clista"><input type="radio"></td>
+                                </tr>
+                                <tr class="tr-clista-high">
+                                    <td class="td-clista">445566</td>
+                                    <td class="td-clista">Tomate x Kilo</span></td>
+                                    <td class="td-clista">Guallarauco</td>
+                                    <td class="td-clista"><span class="in-kg"><label>68</label></span></td>
+                                    <td class="td-clista"><input type="radio"></td>
+                                </tr>
+                                <tr class="tr-clista-high">
+                                    <td class="td-clista">556677</td>
+                                    <td class="td-clista">Limon x Kilo</span></td>
+                                    <td class="td-clista">Guallarauco</td>
+                                    <td class="td-clista"><span class="in-kg"><label>99</label></span></td>
+                                    <td class="td-clista"><input type="radio"></td>
+                                </tr>
+                                <tr class="tr-clista-normal">
+                                    <td class="td-clista">667788</td>
+                                    <td class="td-clista">Confort Extra Suave 30 Mt 4 Rollos</span></td>
+                                    <td class="td-clista">Noble</td>
+                                    <td class="td-clista"><span class="in-un"><label>55</label></span></td>
+                                    <td class="td-clista"><input type="radio"></td>
+                                </tr>
+                                <tr class="tr-clista-normal">
+                                    <td class="td-clista">778899</td>
+                                    <td class="td-clista">Pilas Duracell AA</span></td>
+                                    <td class="td-clista">Duracell</td>
+                                    <td class="td-clista"><span class="in-un"><label>51</label></span></td>
+                                    <td class="td-clista"><input type="radio"></td>
+                                </tr>
+                                <tr class="tr-clista-normal">
+                                    <td class="td-clista">889900</td>
+                                    <td class="td-clista">Pilas Duracell AAA</span></td>
+                                    <td class="td-clista">Duracell</td>
+                                    <td class="td-clista"><span class="in-un"><label>70</label></span></td>
+                                    <td class="td-clista"><input type="radio"></td>
+                                </tr>
+                                <tr class="tr-clista-low">
+                                    <td class="td-clista">778899</td>
+                                    <td class="td-clista">Aceite Maravilla 1 Lt</span></td>
+                                    <td class="td-clista">Mirasol</td>
+                                    <td class="td-clista"><span class="in-un"><label>999</label></span></td>
+                                    <td class="td-clista"><input type="radio"></td>
+                                </tr>
 
-    <div class="ar-control">
-        <h1 class="titulo">Control de Producto</h1>
-        <div class="ar-producto">
-            <form>
-                <div class="row">
-                    <div class="col">
-                        <label>ID: </label><input type="number">
-                        <input type="button" value="Buscar">
+                        </table>
                     </div>
-                </div>
-                <div class="row">
-                    <div class="col">
-                        <label>Nombre: </label><input type="text">
-                    </div>
-                    <div class="col">
-                        <label>Cantidad: </label><input type="number">
-                        <select>
-                            <option>Kg</option>
-                            <option>Un</option>
-                        </select>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col">
-                        
-                    </div>
-                </div>
-            </form>
-            <table class="tabla-control">
-                <tr>
-                    <td><label>ID: </label><input type="number">
-                        <input type="button" value="Buscar">
-                    </td>
-                </tr>
-                <tr>
-                    <td><label>Nombre: </label><input type="text"></td>
-                    <td><label>Cantidad: </label><input type="number">
-                        <select>
-                            <option>Kg</option>
-                            <option>Un</option>
-                        </select>
-                    </td>
-                </tr>
-                <tr>
-                    <td><label>Descripcion: </label><input type="text"></td>
-                    <td><label>Proveedor: </label><input type="text"></td>
-                </tr>
-                <tr>
-                    <td><label>Alerta Bajo stock: </label><select>
-                            <option>Si</option>
-                            <option>No</option>
-                        </select></td>
-                    <td><label>Nivel Bajo stock: </label><input type="text"></td>
-                </tr>
-                <tr>
-                    <td><label>Alerta Mucho stock: </label><select>
-                            <option>Si</option>
-                            <option>No</option>
-                        </select></td>
-                    <td><label>Nivel Mucho stock: </label><input type="text"></td>
-                </tr>
-                <tr>
-                    <td><input type="button" value="Guardar"></td>
-                    <td><input type="button" value="Eliminar"></td>
-                </tr>
-            </table>
-            <div>
-                <h1 class="titulo">Listado de Productos</h1>
-                <div class="lista-productos">
-                    <table class="tabla-clista">
-                        <tr class="tr-clista">
-                            <td class="td-clista"><strong>Codigo</strong></td>
-                            <td class="td-clista"><strong>Producto</strong></td>
-                            <td class="td-clista"><strong>Proveedor</strong></td>
-                            <td class="td-clista"><strong>Stock</strong></td>
-                            <td class="td-clista">
-                                <string>Seleccionar</string>
-                            </td>
-                        </tr>
-                        <tr class="tr-clista-normal">
-                            <td class="td-clista">112233</td>
-                            <td class="td-clista">Palta x Kilo</span></td>
-                            <td class="td-clista">Guallarauco</td>
-                            <td class="td-clista"><span class="in-kg"><label>60</label></span></td>
-                            <td class="td-clista"><input type="radio"></td>
-                        </tr>
-                        <tr class="tr-clista-high">
-                            <td class="td-clista">223344</td>
-                            <td class="td-clista">Cebolla x Kilo</span></td>
-                            <td class="td-clista">Shrek</td>
-                            <td class="td-clista"><span class="in-kg"><label>45</label></span></td>
-                            <td class="td-clista"><input type="radio"></td>
-                        </tr>
-                        <tr class="tr-clista-normal">
-                            <td class="td-clista">334455</td>
-                            <td class="td-clista">Manzana x Kilo</span></td>
-                            <td class="td-clista">Guallarauco</td>
-                            <td class="td-clista"><span class="in-kg"><label>20</label></span></td>
-                            <td class="td-clista"><input type="radio"></td>
-                        </tr>
-                        <tr class="tr-clista-high">
-                            <td class="td-clista">445566</td>
-                            <td class="td-clista">Tomate x Kilo</span></td>
-                            <td class="td-clista">Guallarauco</td>
-                            <td class="td-clista"><span class="in-kg"><label>68</label></span></td>
-                            <td class="td-clista"><input type="radio"></td>
-                        </tr>
-                        <tr class="tr-clista-high">
-                            <td class="td-clista">556677</td>
-                            <td class="td-clista">Limon x Kilo</span></td>
-                            <td class="td-clista">Guallarauco</td>
-                            <td class="td-clista"><span class="in-kg"><label>99</label></span></td>
-                            <td class="td-clista"><input type="radio"></td>
-                        </tr>
-                        <tr class="tr-clista-normal">
-                            <td class="td-clista">667788</td>
-                            <td class="td-clista">Confort Extra Suave 30 Mt 4 Rollos</span></td>
-                            <td class="td-clista">Noble</td>
-                            <td class="td-clista"><span class="in-un"><label>55</label></span></td>
-                            <td class="td-clista"><input type="radio"></td>
-                        </tr>
-                        <tr class="tr-clista-normal">
-                            <td class="td-clista">778899</td>
-                            <td class="td-clista">Pilas Duracell AA</span></td>
-                            <td class="td-clista">Duracell</td>
-                            <td class="td-clista"><span class="in-un"><label>51</label></span></td>
-                            <td class="td-clista"><input type="radio"></td>
-                        </tr>
-                        <tr class="tr-clista-normal">
-                            <td class="td-clista">889900</td>
-                            <td class="td-clista">Pilas Duracell AAA</span></td>
-                            <td class="td-clista">Duracell</td>
-                            <td class="td-clista"><span class="in-un"><label>70</label></span></td>
-                            <td class="td-clista"><input type="radio"></td>
-                        </tr>
-                        <tr class="tr-clista-low">
-                            <td class="td-clista">778899</td>
-                            <td class="td-clista">Aceite Maravilla 1 Lt</span></td>
-                            <td class="td-clista">Mirasol</td>
-                            <td class="td-clista"><span class="in-un"><label>999</label></span></td>
-                            <td class="td-clista"><input type="radio"></td>
-                        </tr>
-
-                    </table>
                 </div>
             </div>
 </body>
