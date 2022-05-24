@@ -45,6 +45,7 @@
   color: white;
   text-decoration: none;
 }
+
 .container {
   position: relative;
   z-index: 1;
@@ -89,21 +90,11 @@ body {
 
 
 .tabla-retiro {
-  position: relative;
-  z-index: 1;
   background: #ffffff;
-  max-width: 90%;
-  margin: 0 auto 100px;
   padding: 2%;
-  text-align: center;
-  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
   border-radius: 10px;
-}
-.tr-retiro , .td-retiro {
-    width: 25%;
-    text-align:  top;
-    vertical-align: top;
-    border: 1px solid #000;
+  border: 1px solid #000;
+  margin-top: 3%;
 }
 
 .btn-eliminar {
@@ -111,7 +102,7 @@ body {
   text-transform: uppercase;
   outline: 0;
   background: rgba(255, 14, 14, 0.712);
-  width: 20%;
+  width: 40px;
   height: 20%;
   border: 0;
   padding: 10px;
@@ -164,7 +155,7 @@ body {
   background: #ffffff;
   max-width: 90%;
   margin: auto;
-  padding: 1%;
+  padding: 2%;
   margin-top: 2%;
   border: 1px solid #000;
   border-radius: 10px;
@@ -246,7 +237,6 @@ body {
 }
 
 .sombra {
-  border-radius: 10px;
   box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
 }
 

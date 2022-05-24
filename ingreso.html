@@ -6,92 +6,142 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=0, initial-scale=1.0">
   <title>Ingreso de Inventario</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
   <link rel="stylesheet" href="./css/style.css">
 </head>
 
 <body>
   <header>
-    <div class="btn-group sombra margen-top-left-1">
-      <a href="./index.html" class="btn btn-primary"aria-current="page">Inicio</a>
-      <a href="./control.html" class="btn btn-primary"aria-current="page">Control</a>
-      <a href="./ingreso.html" class="btn btn-primary active"aria-current="page">Ingreso Material</a>
-      <a href="./retiro.html" class="btn btn-primary"aria-current="page">Retiro Material</a>
+    <nav class="navbar navbar-expand-lg navbar-light sombra" style="background-color: rgb(126, 166, 239);">
+      <div class="container-fliud">
+        <a class="navbar-brand" href="#">
+          <div class="image-content d-inline-block">
+            <img>
+          </div>
+          INVCONTROL
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+          aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      </div>
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav">
+          <a href="./index.html" class="nav-link" aria-current="page">Inicio</a>
+          <a href="./control.html" class="nav-link" aria-current="page">Control</a>
+          <a href="./ingreso.html" class="nav-link active" aria-current="page">Ingreso Material</a>
+          <a href="./retiro.html" class="nav-link" aria-current="page">Retiro Material</a>
+        </div>
+      </div>
+      <span class="navbar-text">Version 2.0</span>
     </nav>
+  </header>
+  <div class="container-xxl">
+    <div class="tabla-retiro overflow-auto">
+      <h1 class="titulo">Listado ingreso en bodega</h1>
+      <table class="table table-sm table-hover table-bordered table-striped">
+        <thead>
+          <tr class="table-info">
+            <td>Producto</td>
+            <td>Cantidad</td>
+            <td>Stock</td>
+            <td>Codigo Producto</td>
+            <td>Fecha</td>
+            <td>Eliminar</td>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Palta x Kg</td>
+            <td>
+              <div class="input-group"><input type="number" class="form-control" value="33"><span
+                  class="in-kg input-group-text"></span></div>
+            </td>
+            <td>60 Kg</td>
+            <td>112233</td>
+            <td>21/02/22</td>
+            <td><input class="btn-eliminar" type="image" value="Eliminar" src="./img/delete.png"></td>
+          </tr>
+          <tr>
+            <td>Cebolla x Kg</td>
+            <td class="input-group"><input class="form-control" type="number" value="33"><span
+                class="in-kg input-group-text"></span></td>
+            <td>45 Kg</td>
+            <td>223344</td>
+            <td>03/03/22</td>
+            <td><input class="btn-eliminar" type="image" value="Eliminar" src="./img/delete.png"></td>
+          </tr>
+          <tr>
+            <td>Manzana x Kg</td>
+            <td class="input-group"><input class="form-control" type="number" value="30"><span
+                class="in-kg input-group-text"></span></td>
+            <td>20 Kg</td>
+            <td>334455</td>
+            <td>11/03/21</td>
+            <td><input class="btn-eliminar" type="image" value="Eliminar" src="./img/delete.png"></td>
+          </tr>
+          <tr>
+            <td>Tomate x Kg</td>
+            <td class="input-group"><input class="form-control" type="number" value="20"><span
+                class="in-kg input-group-text"></span></td>
+            <td>68 Kg</td>
+            <td>445566</td>
+            <td>26/12/22</td>
+            <td><input class="btn-eliminar" type="image" value="Eliminar" src="./img/delete.png"></td>
+          </tr>
+          <tr>
+            <td>Limon x Kg</td>
+            <td class="input-group"><input class="form-control" type="number" value="15"><span
+                class="in-kg input-group-text"></span></td>
+            <td>99 Kg</td>
+            <td>556677</td>
+            <td>13/11/22</td>
+            <td><input class="btn-eliminar" type="image" value="Eliminar" src="./img/delete.png"></td>
+          </tr>
+          <tr>
+            <td>Confort Extra Suave 30 Mt 4 Rollos</td>
+            <td class="input-group"><input class="form-control" type="number" value="15"><span
+                class="in-un input-group-text"></span></td>
+            <td>55 un</td>
+            <td>667788</td>
+            <td>13/11/22</td>
+            <td><input class="btn-eliminar" type="image" value="Eliminar" src="./img/delete.png"></td>
+          </tr>
+          <tr>
+            <td>Pilas Duracell AA</td>
+            <td class="input-group"><input class="form-control" type="number" value="3"><span
+                class="in-un input-group-text"></span></td>
+            <td>51 un</td>
+            <td>778899</td>
+            <td>13/11/22</td>
+            <td><input class="btn-eliminar" type="image" value="Eliminar" src="./img/delete.png"></td>
+          </tr>
+          <tr>
+            <td class="input-group">
+              <div class="form-floating">
+                <input type="number" class="form-control" placeholder="codigo">
+                <label>Codigo</label>
+              </div>
+              <input type="button" class="btn btn-secondary" value="Buscar">
+            </td>
+          </tr>
+        </tbody>
+
+      </table>
+    </div>
   </div>
-</header>
-  <h1 class="titulo">Listado ingreso en bodega</h1>
-  <table class="tabla-retiro">
-    <tr class="tr-retiro">
-      <td class="td-retiro"><strong>Producto</strong></td>
-      <td class="td-retiro"><strong>Cantidad</strong></td>
-      <td class="td-retiro"><strong>Stock</strong></td>
-      <td class="td-retiro"><strong>Codigo Producto</strong></td>
-      <td class="td-retiro"><strong>Fecha</strong></td>
-      <td class="td-retiro"><strong>Eliminar</strong></td>
-    </tr>
-    <tr class="tr-retiro">
-      <td class="td-retiro">Palta x Kg</td>
-      <td class="td-retiro"><span class="in-kg"><input type="number" value="5"></span></td>
-      <td class="td-retiro">60 Kg</td>
-      <td class="td-retiro">112233</td>
-      <td class="td-retiro">21/02/22</td>
-      <td class="td-retiro"><input class="btn-eliminar" type="image" value="Eliminar" src="./img/delete.png"></td>
-    </tr>
-    <tr class="tr-retiro">
-      <td class="td-retiro">Cebolla x Kg</td>
-      <td class="td-retiro"><span class="in-kg"><input type="number" value="33"></span></td>
-      <td class="td-retiro">45 Kg</td>
-      <td class="td-retiro">223344</td>
-      <td class="td-retiro">03/03/22</td>
-      <td class="td-retiro"><input class="btn-eliminar" type="image" value="Eliminar" src="./img/delete.png"></td>
-    </tr>
-    <tr class="tr-retiro">
-      <td class="td-retiro">Manzana x Kg</td>
-      <td class="td-retiro"><span class="in-kg"><input type="number" value="30"></span></td>
-      <td class="td-retiro">20 Kg</td>
-      <td class="td-retiro">334455</td>
-      <td class="td-retiro">11/03/21</td>
-      <td class="td-retiro"><input class="btn-eliminar" type="image" value="Eliminar" src="./img/delete.png"></td>
-    </tr>
-    <tr class="tr-retiro">
-      <td class="td-retiro">Tomate x Kg</td>
-      <td class="td-retiro"><span class="in-kg"><input type="number" value="20"></span></td>
-      <td class="td-retiro">68 Kg</td>
-      <td class="td-retiro">445566</td>
-      <td class="td-retiro">26/12/22</td>
-      <td class="td-retiro"><input class="btn-eliminar" type="image" value="Eliminar" src="./img/delete.png"></td>
-    </tr>
-    <tr class="tr-retiro">
-      <td class="td-retiro">Limon x Kg</td>
-      <td class="td-retiro"><span class="in-kg"><input type="number" value="15"></span></td>
-      <td class="td-retiro">99 Kg</td>
-      <td class="td-retiro">556677</td>
-      <td class="td-retiro">13/11/22</td>
-      <td class="td-retiro"><input class="btn-eliminar" type="image" value="Eliminar" src="./img/delete.png"></td>
-    </tr>
-    <tr class="tr-retiro">
-      <td class="td-retiro">Confort Extra Suave 30 Mt 4 Rollos</td>
-      <td class="td-retiro"><span class="in-un"><input type="number" value="15"></span></td>
-      <td class="td-retiro">55 un</td>
-      <td class="td-retiro">667788</td>
-      <td class="td-retiro">13/11/22</td>
-      <td class="td-retiro"><input class="btn-eliminar" type="image" value="Eliminar" src="./img/delete.png"></td>
-    </tr>
-    <tr class="tr-retiro">
-      <td class="td-retiro">Pilas Duracell AA</td>
-      <td class="td-retiro"><span class="in-un"><input type="number" value="3"></span></td>
-      <td class="td-retiro">51 un</td>
-      <td class="td-retiro">778899</td>
-      <td class="td-retiro">13/11/22</td>
-      <td class="td-retiro"><input class="btn-eliminar" type="image" value="Eliminar" src="./img/delete.png"></td>
-    </tr>
-    <tr class="tr-retiro">
-      <td class="td-retiro"><label>Codigo: </label><input type="number"></td>
-    </tr>
-  </table>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+    crossorigin="anonymous"></script>
+  <script src="./script/script.js"></script>
+  <script>
+    $(document).ready(function () {
+      getDog();
+    })
 
-
+  </script>
 </body>
 
 </html>
