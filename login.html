@@ -22,13 +22,13 @@
       <h3>Iniciar Sesión</h3>
     </div>
     <div class="mb-3">
-      <input type="email" placeholder="Usuario" id="txtemail" class="form-control" required/>
+      <input type="email" placeholder="Usuario" id="txtemail" class="form-control"/>
     </div>
     <div class="mb-3">
-      <input type="password" placeholder="Contraseña" id="txtclave" class="form-control" required />
+      <input type="password" placeholder="Contraseña" id="txtclave" class="form-control"/>
     </div>
     <div class="mb-3">
-      <button class="btn">login</button>
+      <input type="submit" class="btn-login" id="btn-login" value="LOGIN"/>
     </div>
     <div class="mb-3">
       <p class="mensaje">¿No estas registrado?<br><a href="./register.html">Crea una cuenta</a></p>
@@ -48,13 +48,12 @@
             email: true
           },
           txtclave: {
-            required: true,
-            minlength: 10,
-            maxlength: 15
+            required: true
           }
         }
       });
     });
+      
   </script>
 
 </body>

@@ -18,24 +18,27 @@
     </div>
   </header>
   <div class="login-page">
-    <div class="form">
-      <h1>Registro</h1>
-  
- <form class="register-form">
-<div class="mb-3">
-<input type="text" placeholder="Nombre" id="txtnombre" class="form-control" required />
-</div>
-<div class="mb-3">
-<input type="password" placeholder="Contraseña" id="txtclave" class="form-control" required/>
-</div>
-<div class="mb-3">
-<input type="email" placeholder="Correo" id="txtemail" class="form-control" required />
-</div>
-<button>create</button>
-
+    <form class="form" id="register-form" action="./control.html" >
+      <div class="mb-3">
+        <h1>Registro</h1>
+      </div>
+      <div class="mb-3">
+        <input type="text" placeholder="Nombre" id="txtnombre" class="form-control" required/>
+      </div>
+      <div class="mb-3">
+        <input type="password" placeholder="Contraseña" id="txtclave" class="form-control" required/>
+      </div>
+      <div class="mb-3">
+        <input type="email" placeholder="Correo" id="txtemail" class="form-control" required/>
+      </div>
+      <div class="mb-3">
+        <input type="submit" class="btn-login" value="Registrar" />
+      </div>
+      <div class="mb-3">
         <p class="mensaje">¿Ya registrado? | <a href="./login.html">Iniciar Sesion</a></p>
-      </form>
-    </div>
+      </div>
+    </form>
+  </div>
   </div>
 
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
@@ -43,23 +46,18 @@
   <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.9/localization/messages_es.js"></script>
 
   <script>
-    $(document).ready(function() {
-      $("#form-login").validate({
-        rules : {
+    $(document).ready(function () {
+      $("#register-form").validate({
+        rules: {
           txtnombre: {
-            required: true,
-            nombre: true
+            required: true
           },
           txtclave: {
             required: true,
-            minlength: 10,
-            maxlength: 15
           },
           txtemail: {
             required: true,
-            minlength: 10,
-            maxlength: 15,
-            email : true
+            email: true
           }
         }
       });

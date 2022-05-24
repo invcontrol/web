@@ -17,7 +17,7 @@
   border-radius: 10px;
 }
 
-.form button {
+.btn-login {
   font-family: "Roboto", sans-serif;
   text-transform: uppercase;
   outline: 0;
@@ -33,7 +33,7 @@
   border-radius: 10px;
 
 }
-.form button:hover,.form button:active,.form button:focus {
+.btn-login:hover,.btn-login:active,.btn-login:focus {
   background: rgb(68, 121, 68);
 }
 .form .message {
