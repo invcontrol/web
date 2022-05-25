@@ -26,3 +26,7 @@ function val() {
           })
       })()
 }
+
+function elimina_tabla(target) {
+  $(target).hide("slow");
+}
