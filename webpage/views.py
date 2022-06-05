@@ -3,3 +3,6 @@ from django.utils import timezone
 
 def index(request):
     return render(request,'webpage/index.html')
+
+def control(request):
+    return render(request, 'webpage/control.html')

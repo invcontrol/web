@@ -12,7 +12,7 @@ class Item(models.Model):
     descripcion = models.TextField(max_length=200)
     alerta_bajo = models.BooleanField(default=False)
     alerta_sobre = models.BooleanField(default=False)
-    proveedor = models.ForeignKey('Proveedor',on_delete=models.DO_NOTHING)
+    proveedor = models.ForeignKey('Proveedor',on_delete=models.CASCADE)
 
     def __str__(self):
         return self.nombre
@@ -27,9 +27,8 @@ class Proveedor(models.Model):
     def __str__(self):
         return self.nombre
 
-class Usuario(models.Model):
-    correo = models.TextField(null=False, max_length=50)
-    nombre = models.TextField(null=False, max_length=50)
 
-    def __str__(self):
-        return self.nombre
+class Alerta(models.Model):
+    sku = models.ForeignKey('Item',on_delete=models.CASCADE)
+    nivel_bajo = models.IntegerField()
+    nivel_sobre = models.IntegerField()

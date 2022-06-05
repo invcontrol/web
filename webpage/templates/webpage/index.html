@@ -17,7 +17,7 @@
     <header>
         <nav class="navbar navbar-expand-lg navbar-light sombra" style="background-color: rgb(126, 166, 239);">
             <div class="container-fliud">
-                <a class="navbar-brand" href="./index.html">
+                <a class="navbar-brand px-3" href="./index.html">
                     <div class="image-content d-inline-block">
                         <img>
                     </div>
@@ -29,25 +29,41 @@
                     <span class="navbar-toggler-icon"></span>
                 </button>
             </div>
+            {% if user.is_authenticated %}
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                 <div class="navbar-nav">
-                    <a href="./index.html" class="nav-link active" aria-current="page">Inicio</a>
-                    <a href="./control.html" class="nav-link" aria-current="page">Control</a>
+                    <a href="{% url 'index' %}" class="nav-link active" aria-current="page">Inicio</a>
+                    <a href="{% url 'control' %}" class="nav-link" aria-current="page">Control</a>
                     <a href="./ingreso.html" class="nav-link" aria-current="page">Ingreso Material</a>
                     <a href="./retiro.html" class="nav-link" aria-current="page">Retiro Material</a>
+                    <a href="{% url 'logout' %}" class="nav-link" aria-current="page">Logout</a>
                 </div>
             </div>
-            <span class="navbar-text">Version 2.0</span>
+            {% else %}
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav">
+                    <a href="{% url 'index' %}" class="nav-link active" aria-current="page">Inicio</a>
+                    <a href="{% url 'login' %}" class="nav-link" aria-current="page">Login</a>
+
+                </div>
+            </div>
+            {% endif %}
+            <span class="navbar-text px-3">{{ user.username|upper }}</span>
         </nav>
     </header>
     <div class="container-fluid">
         <div class="row">
             <div class="col-2"></div>
             <div class="col-8 cuadro">
+                {% if user.is_authenticated %}
+                <h1>Bienvenido a INVCONTROL</h1>
+                <p>Usuario autentificado {{ user.username|upper }}</p>
+                {% else %}
                 <h1>Bienvenido a INVCONTROL</h1>
                 <p>Antes de poder usar el sistema debe iniciar sesion</p>
-                <a class="enl" href="./login.html">Iniciar Sesion</a> | <a class="enl" href="./register.html">Crear
+                <a class="enl" href="{% url 'login' %}">Iniciar Sesion</a> | <a class="enl" href="./register.html">Crear
                     Cuenta</a>
+                {% endif %}
             </div>
             <div class="col-2"></div>
         </div>
