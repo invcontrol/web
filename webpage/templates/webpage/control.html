@@ -1,44 +1,8 @@
-{% load static %}
-<!DOCTYPE html>
-<html lang="en">
+{% extends 'webpage/base.html' %}
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Control de Bodega</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-    <link rel="stylesheet" href="{% static 'css/style.css' %}">
-</head>
+{% block control-a %}active{% endblock %}
 
-<body>
-    <header>
-        <nav class="navbar navbar-expand-lg navbar-light sombra" style="background-color: rgb(126, 166, 239);">
-            <div class="container-fliud">
-                <a class="navbar-brand" href="#">
-                    <div class="image-content d-inline-block">
-                        <img>
-                    </div>
-                    INVCONTROL
-                </a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false"
-                    aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-            </div>
-            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-                <div class="navbar-nav">
-                    <a href="{% url 'index' %}" class="nav-link" aria-current="page">Inicio</a>
-                    <a href="{% url 'control' %}" class="nav-link active" aria-current="page">Control</a>
-                    <a href="./ingreso.html" class="nav-link" aria-current="page">Ingreso Material</a>
-                    <a href="./retiro.html" class="nav-link" aria-current="page">Retiro Material</a>
-                </div>
-            </div>
-            <span class="navbar-text">Version 2.0</span>
-        </nav>
-    </header>
+{% block content %}
     <div class="container-xxl">
         <div class="ar-control">
             <h1 class="titulo">Control de Producto</h1>
@@ -192,17 +156,4 @@
                     </form>
                 </div>
             </div>
-            <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
-                integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
-                crossorigin="anonymous"></script>
-            <script src="./script/script.js"></script>
-            <script>
-                $(document).ready(function () {
-                    getDog();
-                })
-
-            </script>
-</body>
-
-</html>
+{% endblock %}

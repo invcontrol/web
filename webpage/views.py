@@ -6,3 +6,9 @@ def index(request):
 
 def control(request):
     return render(request, 'webpage/control.html')
+
+def ingreso(request):
+    return render(request, 'webpage/ingreso.html')
+
+def retiro(request):
+    return render(request,'webpage/retiro.html')
