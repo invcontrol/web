@@ -1,0 +1,13 @@
+[
+    {
+        "model":"webpage.item",
+        "pk":1,
+        "fields":{
+            "sku":123,
+            "nombre":"Pila AA",
+            "cantidad":300,
+            "descripcion":"Pila AA",
+            "proveedor":1
+        }
+    }
+]

@@ -9,6 +9,7 @@ class Item(models.Model):
     sku = models.IntegerField()
     nombre = models.TextField()
     cantidad = models.IntegerField()
+    tipo = models.ForeignKey('TipoUnidad',on_delete=models.DO_NOTHING, default=1)
     descripcion = models.TextField(max_length=200)
     alerta_bajo = models.BooleanField(default=False)
     alerta_sobre = models.BooleanField(default=False)
@@ -32,3 +33,11 @@ class Alerta(models.Model):
     sku = models.ForeignKey('Item',on_delete=models.CASCADE)
     nivel_bajo = models.IntegerField()
     nivel_sobre = models.IntegerField()
+
+
+class TipoUnidad(models.Model):
+    tipo = models.TextField(null=False)
+    abr = models.CharField(max_length=3,null=False)
+    
+    def __str__(self):
+        return self.abr

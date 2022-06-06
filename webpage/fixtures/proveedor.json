@@ -1,0 +1,22 @@
+[
+    {
+        "model":"webpage.proveedor",
+        "pk":1,
+        "fields": {
+            "nombre":"Duracell",
+            "telefono":1234,
+            "correo":"contacto@duracel.cl",
+            "direccion":"Camino la rosa 123"
+        }
+    },
+    {
+        "model":"webpage.proveedor",
+        "pk":2,
+        "fields": {
+            "nombre":"Confort",
+            "telefono":1234,
+            "correo":"contacto@confort.cl",
+            "direccion":"Camino la rosa 123"
+        }
+    }
+]

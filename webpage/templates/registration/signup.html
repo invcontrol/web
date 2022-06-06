@@ -1,0 +1,41 @@
+{% extends 'webpage/base.html' %}
+
+{% block signup-a %}active{% endblock %}
+{% block content %}
+  <div class="login-page">
+    <form class="form needs-validation" id="register-form" action="" method="post" novalidate>
+      {% csrf_token %}
+      <div class="mb-3">
+        <h1>Registro</h1>
+      </div>
+      <div class="form-floating mb-3">
+        <input type="text" placeholder="Nombre" id="id_username"  name="username" class="form-control has-validation" required />
+        <label for="txtNombre">Nombre Usuario</label>
+        <div class="invalid-feedback">
+          Por favor, ingrese un nombre de usuario.
+        </div>
+      </div>
+      <div class="form-floating mb-3">
+        <input type="password" placeholder="Contraseña" id="id_password1" name="password1" class="form-control has-validation" required />
+        <label for="id_password1">Contraseña</label>
+        <div class="invalid-feedback">
+          Por favor, ingrese una contraseña.
+        </div>
+      </div>
+      <div class="form-floating mb-3">
+        <input type="password" placeholder="Contraseña" id="id_password2" name="password2" class="form-control has-validation" required />
+        <label for="id_password2">Repita Contraseña</label>
+        <div class="invalid-feedback">
+          Por favor, ingrese una contraseña.
+        </div>
+      </div>
+      <div class="mb-3">
+        <input type="submit" class="btn-login" value="Registrar" />
+      </div>
+      <div class="mb-3">
+        <p class="mensaje">¿Ya registrado? | <a href="{% url 'login' %}">Iniciar Sesion</a></p>
+      </div>
+    </form>
+  </div>
+  </div>
+{% endblock %}
