@@ -6,14 +6,14 @@ from django.utils import timezone
 
 # Create your models here.
 class Item(models.Model):
-    sku = models.IntegerField()
-    nombre = models.TextField()
-    cantidad = models.IntegerField()
+    sku = models.IntegerField(default=1)
+    nombre = models.TextField(default="test")
+    cantidad = models.IntegerField(default=1)
     tipo = models.ForeignKey('TipoUnidad',on_delete=models.DO_NOTHING, default=1)
-    descripcion = models.TextField(max_length=200)
+    descripcion = models.TextField(max_length=200, default="item_prueba")
     alerta_bajo = models.BooleanField(default=False)
     alerta_sobre = models.BooleanField(default=False)
-    proveedor = models.ForeignKey('Proveedor',on_delete=models.CASCADE)
+    proveedor = models.ForeignKey('Proveedor',on_delete=models.CASCADE, default=1)
 
     def __str__(self):
         return self.nombre
@@ -38,6 +38,6 @@ class Alerta(models.Model):
 class TipoUnidad(models.Model):
     tipo = models.TextField(null=False)
     abr = models.CharField(max_length=3,null=False)
-    
+    cssclass = models.CharField(max_length=5,default="in-kg")
     def __str__(self):
         return self.abr

@@ -3,18 +3,18 @@
 {% block control-a %}active{% endblock %}
 
 {% block content %}
-    <div>{{ prod.sku }}</div>
     <div class="container-xxl">
         <div class="ar-control">
-            <h1 class="titulo">Control de Producto {{ btn }}</h1>
+            <h1 class="titulo">Control de Producto</h1>
             <div class="">
                 <form class="" method="post">
                     {% csrf_token %}
+                    <input type="hidden" value="{{ prod.id }}" name="id">
                     <div class="row mb-3">
                         <div class="col-md-6">
                             <div class="input-group">
                                 <input type="number" class="form-control" name="c-sku" value="{{ prod.sku }}">
-                                <input type="button" class="btn btn-secondary" value="Buscar">
+                                <input type="submit" class="btn btn-secondary" name="btn-buscar" value="Buscar">
                             </div>
                         </div>
                     </div>
@@ -28,8 +28,9 @@
                             <span class="input-group-text">Cantidad</span>
                             <input class="form-control" type="number" name="txtCantidad" value="{{ prod.cantidad }}">
                             <select class="form-select" aria-label="Unidad" name="sel-tipo">
-                                <option value="1" {% if prod.tipo.id == 1 %}selected{% endif %}>Kg</option>
-                                <option value="2" {% if prod.tipo.id == 2 %}selected{% endif %}>Un</option>
+                                {% for tipo in tipos %}
+                                    <option value="{{ tipo.id }}" {% if tipo.id == prod.tipo.id %}selected{% endif %}>{{ tipo.abr }}</option>
+                                {% endfor %}
                             </select>
                         </div>
                     </div>
@@ -40,7 +41,12 @@
                         </div>
                         <div class="col input-group">
                             <span class="input-group-text">Proveedor</span>
-                            <input name="txtProv" class="form-control" type="text" value="{{ prod.proveedor }}">
+                            <select class="form-select" name="sel-prov" onchange="checkProv(this)">
+                                {% for prov in proveedores %}
+                                <option value="{{ prov.id }}" {% if prov.id == prod.proveedor.id %}selected{% endif %}>{{ prov.nombre }}</option>
+                                {% endfor %}
+                                <option value="add" >Añadir Proveedor</option>
+                            </select>
                         </div>
                     </div>
                     <div class="row mb-3">
@@ -71,8 +77,9 @@
                         <div class="col">
                             <input class="btn btn-success" name="btn-guardar" type="submit" value="Guardar">
                         </div>
-                        <div class="col">
+                        <div class="col input-group">
                             <input class="btn btn-danger" name="btn-eliminar" type="submit" value="Eliminar">
+                            <input type="submit" value="Limpiar" class="btn btn-secondary" name="btn-limpiar" >
                         </div>
                     </div>
                 </form>
@@ -96,7 +103,7 @@
                                     <td>{{ producto.sku }}</td>
                                     <td>{{ producto.nombre }}</td>
                                     <td>{{ producto.proveedor }}</td>
-                                    <td>{{ producto.cantidad }}</td>
+                                    <td class="{{ producto.tipo.cssclass }}">{{ producto.cantidad }}</td>
                                     <td><input type="radio" id="rb-{{ producto.sku }}" name="sel-prod" class="form-check-input" {% if prod.sku == producto.sku %}checked{% endif %}  value="{{producto.sku}}" onclick="this.form.submit()"></td>
                                 </tr>
                                 {% endfor %}
@@ -105,4 +112,5 @@
                     </form>
                 </div>
             </div>
+            
 {% endblock %}

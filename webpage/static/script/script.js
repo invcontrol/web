@@ -30,3 +30,10 @@ function val() {
 function elimina_tabla(target) {
   $(target).hide("slow");
 }
+
+function checkProv(sel) {
+  alert("funciona");
+  if(sel.value=="add"){
+    $(location).attr("href","/");
+  }
+}
