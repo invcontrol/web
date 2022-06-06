@@ -32,7 +32,6 @@ function elimina_tabla(target) {
 }
 
 function checkProv(sel) {
-  alert("funciona");
   if(sel.value=="add"){
     $(location).attr("href","/");
   }
