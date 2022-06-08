@@ -150,8 +150,6 @@ body {
 }
 
 .ar-control {
-  position: relative;
-  z-index: 1;
   background: #ffffff;
   max-width: 90%;
   margin: auto;
@@ -165,7 +163,6 @@ body {
 .tabla-control {
   position: relative;
   display: block;
-  z-index: 1;
   background: #ffffff;
   padding: 2%;
   text-align: left;
@@ -189,7 +186,6 @@ body {
 
 .tabla-clista {
   position: relative;
-  z-index: 1;
   background: #ffffff;
   max-width: 100%;
   text-align: left;
