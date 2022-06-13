@@ -2,6 +2,8 @@
 
 {% block retiro-a %}active{% endblock %}
 
+{% load static %}
+
 {% block content %}
   <div class="container-xxl">
     <div class="tabla-retiro overflow-auto">
@@ -18,7 +20,7 @@
           </tr>
         </thead>
         <tbody>
-          <tr>
+          <tr id="tr-palta">
             <td>Palta x Kg</td>
             <td>
               <div class="input-group"><input type="number" class="form-control" value="33"><span
@@ -27,7 +29,7 @@
             <td>60 Kg</td>
             <td>112233</td>
             <td>21/02/22</td>
-            <td><input class="btn-eliminar" type="image" value="Eliminar" src="./img/delete.png"></td>
+            <td><input class="btn-eliminar" type="image" value="Eliminar" src="{% static 'img/delete.png' %}" onclick="$('#tr-palta').hide('slow')" ></td>
           </tr>
           <tr>
             <td>Cebolla x Kg</td>
@@ -36,7 +38,7 @@
             <td>45 Kg</td>
             <td>223344</td>
             <td>03/03/22</td>
-            <td><input class="btn-eliminar" type="image" value="Eliminar" src="./img/delete.png"></td>
+            <td><input class="btn-eliminar" type="image" value="Eliminar" src="{% static 'img/delete.png'  %}"></td>
           </tr>
           <tr>
             <td>Manzana x Kg</td>
@@ -45,7 +47,7 @@
             <td>20 Kg</td>
             <td>334455</td>
             <td>11/03/21</td>
-            <td><input class="btn-eliminar" type="image" value="Eliminar" src="./img/delete.png"></td>
+            <td><input class="btn-eliminar" type="image" value="Eliminar" src="{% static 'img/delete.png'  %}"></td>
           </tr>
           <tr>
             <td>Tomate x Kg</td>
@@ -54,7 +56,7 @@
             <td>68 Kg</td>
             <td>445566</td>
             <td>26/12/22</td>
-            <td><input class="btn-eliminar" type="image" value="Eliminar" src="./img/delete.png"></td>
+            <td><input class="btn-eliminar" type="image" value="Eliminar" src="{% static 'img/delete.png'  %}"></td>
           </tr>
           <tr>
             <td>Limon x Kg</td>
@@ -63,7 +65,7 @@
             <td>99 Kg</td>
             <td>556677</td>
             <td>13/11/22</td>
-            <td><input class="btn-eliminar" type="image" value="Eliminar" src="./img/delete.png"></td>
+            <td><input class="btn-eliminar" type="image" value="Eliminar" src="{% static 'img/delete.png'  %}"></td>
           </tr>
           <tr>
             <td>Confort Extra Suave 30 Mt 4 Rollos</td>
@@ -72,7 +74,7 @@
             <td>55 un</td>
             <td>667788</td>
             <td>13/11/22</td>
-            <td><input class="btn-eliminar" type="image" value="Eliminar" src="./img/delete.png"></td>
+            <td><input class="btn-eliminar" type="image" value="Eliminar" src="{% static 'img/delete.png'  %}"></td>
           </tr>
           <tr>
             <td>Pilas Duracell AA</td>
@@ -81,7 +83,7 @@
             <td>51 un</td>
             <td>778899</td>
             <td>13/11/22</td>
-            <td><input class="btn-eliminar" type="image" value="Eliminar" src="./img/delete.png"></td>
+            <td><input class="btn-eliminar" type="image" value="Eliminar" src="{% static 'img/delete.png'  %}"></td>
           </tr>
           <tr>
             <td class="input-group">

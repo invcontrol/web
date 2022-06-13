@@ -39,19 +39,10 @@ def control(request):
             pp[0].descripcion = desc
             pp[0].tipo = TipoUnidad.objects.get(id=tipo)
             pp[0].proveedor = Proveedor.objects.get(nombre=prov)
-            if bajostock == "on":
-                pp[0].alerta_bajo = True
-            else:
-                pp[0].alerta_bajo = False
-            if sobrestock == "on":
-                pp[0].alerta_sobre = True
-            else:
-                pp[0].alerta_sobre = False
+            pp[0].alerta_bajo = True if bajostock == "on" else False
+            pp[0].alerta_sobre = True if sobrestock == "on" else False
             pp[0].save()
-            if pp[1]:
-                resp = "Producto Creado"
-            else:
-                resp = "Producto Modificado"
+            resp = "Producto Creado" if pp[1] else "Producto Modificado"
             resp_tipo = "bg-success"
             return render(request,'webpage/control.html',{'productos': productos,'proveedores':proveedores,'tipos':tipos,'resp':resp,'resp_tipo':resp_tipo})
         elif 'btn-eliminar' in post:
