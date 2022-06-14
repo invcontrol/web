@@ -18,5 +18,23 @@
             "correo":"contacto@confort.cl",
             "direccion":"Camino la rosa 123"
         }
+    },
+    {
+        "model":"webpage.tipounidad",
+        "pk":1,
+        "fields": {
+            "tipo":"En Unidades",
+            "abr":"Un",
+            "cssclass":"in-un"
+        }
+    },
+    {
+        "model":"webpage.tipounidad",
+        "pk":2,
+        "fields": {
+            "tipo":"En Kilos",
+            "abr":"Kg",
+            "cssclass":"in-kg"
+        }
     }
 ]
