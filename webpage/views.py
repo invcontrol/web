@@ -1,6 +1,7 @@
-from django.shortcuts import render, redirect
-from django.utils import timezone
-from django.core.exceptions import ObjectDoesNotExist
+from django.shortcuts import render
+from rest_framework import viewsets
+from rest_framework import permissions
+from .serializers import ItemSerializer,ProveedorSerializer, TipoUnidadSerializer
 from .models import *
 
 def index(request):
@@ -68,3 +69,21 @@ def ingreso(request):
 
 def retiro(request):
     return render(request,'webpage/retiro.html')
+
+def proveedor(request):
+    return render(request,'webpage/agregaproveedor.html')
+
+class ItemViewSet(viewsets.ModelViewSet):
+    queryset = Item.objects.all().order_by('sku')
+    serializer_class = ItemSerializer
+    permission_classes = [permissions.IsAuthenticated]
+
+class ProveedorViewSet(viewsets.ModelViewSet):
+    queryset = Proveedor.objects.all().order_by('nombre')
+    serializer_class = ProveedorSerializer
+    permission_classes = [permissions.IsAuthenticated]
+
+class TipoUnidadViewSet(viewsets.ModelViewSet):
+    queryset = TipoUnidad.objects.all().order_by('id')
+    serializer_class = TipoUnidadSerializer
+    permission_classes = [permissions.IsAuthenticated]

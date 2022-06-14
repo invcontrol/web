@@ -6,5 +6,6 @@ urlpatterns = [
     path('Control',views.control, name='control'),
     path('Control/Retiro',views.retiro,name='retiro'),
     path('Control/Ingreso',views.ingreso, name='ingreso'),
+    path('Control/Proveedor',views.proveedor,name='agregaproveedor')
 ]
 
