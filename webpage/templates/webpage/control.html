@@ -106,7 +106,7 @@
 </div>
 <script>
     $(document).ready(function () {
-        $.get("/items", function (data) {
+        $.get("/api/items", function (data) {
             $.each(data.results, function (i, value) {
                 $("#lista").append("<tr id='tr-" + value.sku + "'>" +
                     "<td>" + value.sku + "</td>" +

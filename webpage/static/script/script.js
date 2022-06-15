@@ -33,7 +33,7 @@ function elimina_tabla(target) {
 
 function checkProv(sel) {
   if(sel.value=="add"){
-    $(location).attr("href","/");
+    $(location).attr("href","/Control/Proveedor");
   }
 }
 

@@ -26,7 +26,7 @@ router.register(r'tipos',views.TipoUnidadViewSet)
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('',include('webpage.urls')),
-    path('',include(router.urls)),
+    path('api/',include(router.urls)),
     path('accounts/',include('accounts.urls')),
     path('accounts/',include('django.contrib.auth.urls')),
     path('api-auth/', include('rest_framework.urls', namespace='rest_framework'))
