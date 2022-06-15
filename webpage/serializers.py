@@ -14,4 +14,4 @@ class ProveedorSerializer(serializers.HyperlinkedModelSerializer):
 class TipoUnidadSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = TipoUnidad
-        fields = ['tipo','abr']
+        fields = ['tipo','abr','cssclass']
