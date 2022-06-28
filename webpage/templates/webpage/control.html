@@ -13,6 +13,7 @@
                 <div class="row mb-3">
                     <div class="col-md-6">
                         <div class="input-group">
+                            <span class="input-group-text">SKU</span>
                             <input type="number" class="form-control" name="c-sku" value="{{ prod.sku }}">
                             <input type="submit" class="btn btn-secondary" name="btn-buscar" value="Buscar">
                         </div>
@@ -46,6 +47,7 @@
                             {% endfor %}
                             <option value="add">** Añadir Proveedor **</option>
                         </select>
+                        <input type="submit" class="btn btn-secondary" name="btn-mod-prov" value="Editar" >
                     </div>
                 </div>
                 <div class="row mb-3">

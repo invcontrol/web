@@ -1,7 +1,8 @@
-from django.shortcuts import render
+from django.shortcuts import render,redirect,get_object_or_404
 from rest_framework import viewsets, permissions
 from .serializers import ItemSerializer,ProveedorSerializer, TipoUnidadSerializer
 from .models import *
+from .forms import ProveedorForm
 
 def index(request):
     return render(request,'webpage/index.html')
@@ -15,7 +16,10 @@ def control(request):
     if request.method == "POST":
         post = request.POST
         prod = Item()
-        if 'btn-guardar' in post:
+        if 'btn-mod-prov' in post:
+            prov = Proveedor.objects.get(id=post["sel-prov"])
+            return redirect('modificaproveedor',prov.id)
+        elif 'btn-guardar' in post:
             pp = Item()
             if post["id"] != '':
                 pp = Item.objects.get_or_create(id=post["id"])
@@ -69,8 +73,26 @@ def ingreso(request):
 def retiro(request):
     return render(request,'webpage/retiro.html')
 
-def proveedor(request):
-    return render(request,'webpage/agregaproveedor.html')
+def newproveedor(request):
+    if 'btn-volver' in request.POST:
+        return redirect('control')
+    if request.method == "POST":
+        form = ProveedorForm(request.POST)
+        if form.is_valid():
+            form.save()
+        return redirect('control')
+    else:
+        form = ProveedorForm()
+        return render(request,'webpage/agregaproveedor.html',{'form':form})
+
+def modproveedor(request,id):
+    if 'btn-volver' in request.POST:
+        return redirect('control')
+    prov = get_object_or_404(Proveedor, id=id)
+    if 'btn-eliminar' in request.POST:
+        prov.delete()
+        return redirect('control')
+    return render(request,'webpage/agregaproveedor.html',{'prov':prov})
 
 class ItemViewSet(viewsets.ModelViewSet):
     queryset = Item.objects.all().order_by('sku')

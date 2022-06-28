@@ -1,6 +1,53 @@
 {% extends 'webpage/base.html' %}
 
 {% block content %}
-
-
+<div class="container-sm margen-top-5">
+    <div class="row">
+        <div class="col"></div>
+        <form class="col-md-6 ar-control" method="post">
+            <div class="row mb-3">
+                <div class="col-10">
+                    <h1>Agregar proveedor</h1>
+                </div>
+                <div class="col-2 d-flex justify-content-end">
+                    <input class="btn btn-warning" name="btn-volver" value="Volver" type="submit">
+                </div>
+            </div>
+            
+            {% csrf_token %}
+            <input type="hidden" value="{{ prov.id }}" name="id">
+            <div class="row mb-3">
+                <div class="col input-group">
+                    <span class="input-group-text">Nombre Proveedor</span>
+                    <input class="form-control" type="text" name="nombre" value="{{ prov.nombre }}" autocomplete="off">
+                </div>
+            </div>
+            <div class="row mb-3">
+                <div class="col input-group">
+                    <span class="input-group-text">Direccion</span>
+                    <input class="form-control" type="text" name="direccion" value="{{ prov.direccion }}" autocomplete="address-level1">
+                </div>
+            </div>
+            <div class="row mb-3">
+                <div class="col input-group">
+                    <span class="input-group-text">Telefono</span>
+                    <input class="form-control" type="number" name="telefono" value="{{ prov.telefono }}" autocomplete="tel-local">
+                </div>
+            </div>
+            <div class="row mb-3">
+                <div class="col input-group">
+                    <span class="input-group-text">Email</span>
+                    <input class="form-control" type="email" name="correo" value="{{ prov.correo }}" autocomplete="email">
+                </div>
+            </div>
+            <div class="row mb-3">
+                <div class="col input-group d-flex justify-content-center">
+                    <input class="btn btn-success" type="submit" name="btn-guardar" value="Guardar" >
+                    <input class="btn btn-danger" type="submit" name="btn-eliminar" value="Eliminar" >
+                </div>
+            </div>
+        </form>
+        <div class="col"></div>
+    </div>
+</div>
 {% endblock %}

@@ -21,9 +21,9 @@ class Item(models.Model):
 
 class Proveedor(models.Model):
     nombre = models.TextField(max_length=50,null=False)
-    telefono = models.IntegerField(null=False)
-    correo = models.TextField(max_length=50)
-    direccion = models.TextField(null=False)
+    telefono = models.IntegerField(null=True)
+    correo = models.TextField(max_length=50,null=True)
+    direccion = models.TextField(null=True)
 
     def __str__(self):
         return self.nombre
