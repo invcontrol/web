@@ -5,43 +5,45 @@
 {% load static %}
 
 {% block content %}
-  <div class="container-xxl">
-    <div class="tabla-retiro overflow-auto">
-      <h1 class="titulo">Listado retiro de bodega</h1>
-      <table class="table table-sm table-hover table-bordered table-striped">
+<div class="container-xxl">
+  <div class="tabla-retiro overflow-auto">
+    <form method="post">
+      {% csrf_token %}
+      <div class="col mb-3">
+        <h1 class="titulo">Listado retiro de bodega</h1>
+      </div>
+      <div class="row">
+        <div class="col mb-3 input-group">
+          <div class="form-floating">
+            <input type="number" id="txtbusqueda" class="form-control" placeholder="codigo">
+            <label>Codigo</label>
+          </div>
+          <input type="button" class="btn btn-secondary" value="Buscar"
+            onclick="agrega_producto('#carrito',$('#txtbusqueda').val())">
+        </div>
+        <div class="col input-group d-flex justify-content-end mb-3">
+          <input class="btn btn-success" name="btn-guardar" type="submit" value="Guardar">
+          <input type="button" value="Limpiar" class="btn btn-secondary" name="btn-limpiar" onclick="$('#carrito tbody tr').remove()">
+        </div>
+      </div>
+
+
+      <table id="carrito" class="table table-sm table-hover table-bordered table-striped">
         <thead>
           <tr class="table-info">
             <td>Producto</td>
             <td>Cantidad</td>
             <td>Stock</td>
             <td>Codigo Producto</td>
-            <td>Fecha</td>
             <td>Eliminar</td>
           </tr>
         </thead>
         <tbody>
-          
-          <tr>
-            <td>Pilas Duracell AA</td>
-            <td class="input-group"><input class="form-control" type="number" value="3"><span
-                class="in-un input-group-text"></span></td>
-            <td>51 un</td>
-            <td>778899</td>
-            <td>13/11/22</td>
-            <td><input class="btn-eliminar" type="image" value="Eliminar" src="{% static 'img/delete.png'  %}"></td>
-          </tr>
-          <tr>
-            <td class="input-group">
-              <div class="form-floating">
-                <input type="number" class="form-control" placeholder="codigo">
-                <label>Codigo</label>
-              </div>
-              <input type="button" class="btn btn-secondary" value="Buscar">
-            </td>
-          </tr>
         </tbody>
 
       </table>
-    </div>
+    </form>
+
   </div>
+</div>
 {% endblock %}

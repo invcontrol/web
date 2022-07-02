@@ -98,6 +98,7 @@ class ItemViewSet(viewsets.ModelViewSet):
     queryset = Item.objects.all().order_by('sku')
     serializer_class = ItemSerializer
     permission_classes = [permissions.IsAuthenticated]
+    lookup_field = 'sku'
 
 class ProveedorViewSet(viewsets.ModelViewSet):
     queryset = Proveedor.objects.all().order_by('nombre')
