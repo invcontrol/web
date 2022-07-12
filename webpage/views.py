@@ -21,7 +21,7 @@ def control(request):
             return redirect('modificaproveedor',prov.id)
         elif 'btn-mod-un' in post:
             un = TipoUnidad.objects.get(id=post["sel-tipo"])
-            return redirect('unidades',un.id)
+            return redirect('modunidad',un.id)
         elif 'btn-guardar' in post:
             pp = Item()
             if post["id"] != '':
