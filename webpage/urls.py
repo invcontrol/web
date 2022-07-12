@@ -8,5 +8,8 @@ urlpatterns = [
     path('control/ingreso',views.ingreso, name='ingreso'),
     path('control/proveedor/new',views.newproveedor,name='agregaproveedor'),
     path('control/proveedor/<int:id>',views.modproveedor,name='modificaproveedor'),
+    path('control/unidades/new',views.newunidades,name='newunidad'),
+    path('control/unidades/<int:id>',views.modunidades,name='modunidad')
+
 ]
 

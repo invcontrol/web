@@ -19,6 +19,9 @@ def control(request):
         if 'btn-mod-prov' in post:
             prov = Proveedor.objects.get(id=post["sel-prov"])
             return redirect('modificaproveedor',prov.id)
+        elif 'btn-mod-un' in post:
+            un = TipoUnidad.objects.get(id=post["sel-tipo"])
+            return redirect('unidades',un.id)
         elif 'btn-guardar' in post:
             pp = Item()
             if post["id"] != '':
@@ -68,10 +71,42 @@ def control(request):
         return render(request,'webpage/control.html',{'productos': productos,'proveedores':proveedores,'tipos':tipos,'resp':resp,'resp_tipo':resp_tipo})
 
 def ingreso(request):
-    return render(request, 'webpage/ingreso.html')
+    if request.method == "POST":
+        if 'btn-guardar' in request.POST:
+            productos = []
+            for key,value in request.POST.items():
+                if key.startswith("in-"):
+                    sku = key[3:]
+                    prod = Item.objects.get(sku=sku)
+                    cant = int(value)
+                    productos.append([prod,cant])
+            for p in productos:
+                n = p[0].cantidad - p[1]
+                p[0].update(cantidad=p)
+            resp = "Actualizacion Hecha"
+            resp_tipo = "bg-success"
+            return render(request,'webpage/ingreso.html',{'resp':resp,'resp_tipo':resp_tipo})
+    else:
+        return render(request,'webpage/ingreso.html')
 
 def retiro(request):
-    return render(request,'webpage/retiro.html')
+    if request.method == "POST":
+        if 'btn-guardar' in request.POST:
+            productos = []
+            for key,value in request.POST.items():
+                if key.startswith("in-"):
+                    sku = key[3:]
+                    prod = Item.objects.get(sku=sku)
+                    cant = int(value)
+                    productos.append([prod,cant])
+            for p in productos:
+                n = p[0].cantidad - p[1]
+                p[0].update(cantidad=p)
+            resp = "Actualizacion Hecha"
+            resp_tipo = "bg-success"
+            return render(request,'webpage/retiro.html',{'resp':resp,'resp_tipo':resp_tipo})
+    else:
+        return render(request,'webpage/retiro.html')
 
 def newproveedor(request):
     if 'btn-volver' in request.POST:
@@ -93,6 +128,12 @@ def modproveedor(request,id):
         prov.delete()
         return redirect('control')
     return render(request,'webpage/agregaproveedor.html',{'prov':prov})
+
+def newunidades(request):
+    return render(request,'webpage/unidades.html')
+
+def modunidades(request,id):
+    return render(request,'webpage/unidades.html')
 
 class ItemViewSet(viewsets.ModelViewSet):
     queryset = Item.objects.all().order_by('sku')

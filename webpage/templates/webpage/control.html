@@ -27,11 +27,13 @@
                     <div class="col input-group">
                         <span class="input-group-text">Cantidad</span>
                         <input class="form-control" type="number" name="txtCantidad" value="{{ prod.cantidad }}">
-                        <select class="form-select" aria-label="Unidad" name="sel-tipo">
+                        <select class="form-select" aria-label="Unidad" name="sel-tipo" onchange="checkUn(this)">
                             {% for tipo in tipos %}
                                 <option value="{{ tipo.id }}" {% if tipo.id == prod.tipo.id %}selected{% endif %}>{{ tipo.abr }}</option>
                             {% endfor %}
+                            <option value="add">** Añadir Tipo Unidad **</option>
                         </select>
+                        <input class="btn btn-secondary" type="sumbit" value="Editar" name="btn-mod-unidad"></button>
                     </div>
                 </div>
                 <div class="row mb-3">

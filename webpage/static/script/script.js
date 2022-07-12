@@ -35,6 +35,12 @@ function checkProv(sel) {
   }
 }
 
+function checkUn(sel) {
+  if (sel.value == "add") {
+    $(location).attr("href", "/control/unidades/new");
+  }
+}
+
 function agrega_producto(target, codigo) {
   $(document).ready(function () {
     if ($("#txtbusqueda").val() != "") {
