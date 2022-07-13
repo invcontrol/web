@@ -31,7 +31,7 @@
                             {% for tipo in tipos %}
                                 <option value="{{ tipo.id }}" {% if tipo.id == prod.tipo.id %}selected{% endif %}>{{ tipo.abr }}</option>
                             {% endfor %}
-                            <option value="add">** Añadir Tipo Unidad **</option>
+                            <option value="add">** Añadir tipo de producto **</option>
                         </select>
                         <input type="submit" class="btn btn-secondary" name="btn-mod-un" value="Editar" >
                     </div>
