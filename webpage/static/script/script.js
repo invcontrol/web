@@ -1,7 +1,7 @@
 function getDog() {
   $.getJSON("https://dog.ceo/api/breeds/image/random", function (data) {
     $(".breeds-image-random pre").html(JSON.stringify(data, null, 4));
-    $(".image-content").html("<img src='" + data.message + "'style=\"width: 50px; height: 50px\">");
+    $(".image-content").html("<img src='" + data.message + "'style=\"width: 250px; height: 250px\">");
   });
 }
 
