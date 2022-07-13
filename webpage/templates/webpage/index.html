@@ -10,6 +10,9 @@
                 {% if user.is_authenticated %}
                 <h1>Bienvenido a INVCONTROL</h1>
                 <p>Usuario autentificado {{ user.username|upper }}</p>
+                <div class="image-content d-inline-block">
+                    <img>
+                </div>
                 {% else %}
                 <h1>Bienvenido a INVCONTROL</h1>
                 <p>Antes de poder usar el sistema debe iniciar sesion</p>
@@ -20,4 +23,7 @@
             <div class="col-2"></div>
         </div>
     </div>
+    <script>$(document).ready(function(){
+        getDog();
+    });</script>
 {% endblock %}
