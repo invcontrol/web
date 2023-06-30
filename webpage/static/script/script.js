@@ -89,7 +89,7 @@ function agrega_producto_ingreso(target, codigo) {
         $.get("/api/items/" + codigo, function (data) {
           $(target).append("<tr id='tr-" + data.sku + "'>" +
             "<td>" + data.nombre + "</td>" +
-            "<td class='input-group'><input class='form-control' id='in-" + data.sku + "' value=1 min=1 type='number'>" +
+            "<td class='input-group'><input class='form-control' id='in-" + data.sku + "'  name='in-" + data.sku + "' value=1 min=1 type='number'>" +
             "<span name='tipo-" + data.sku + "' class='input-group-text'></span></td>" +
             "<td><label>" + data.cantidad + "</label><span name='tipo-" + data.sku + "'></span></td>" +
             "<td>" + data.sku + "</td>" +

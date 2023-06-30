@@ -81,8 +81,8 @@ def ingreso(request):
                     cant = int(value)
                     productos.append([prod,cant])
             for p in productos:
-                n = p[0].cantidad - p[1]
-                p[0].update(cantidad=p)
+                p[0].cantidad = p[0].cantidad + p[1]
+                p[0].save()
             resp = "Actualizacion Hecha"
             resp_tipo = "bg-success"
             return render(request,'webpage/ingreso.html',{'resp':resp,'resp_tipo':resp_tipo})
@@ -100,8 +100,8 @@ def retiro(request):
                     cant = int(value)
                     productos.append([prod,cant])
             for p in productos:
-                n = p[0].cantidad - p[1]
-                p[0].update(cantidad=p)
+                p[0].cantidad = p[0].cantidad - p[1]
+                p[0].save()
             resp = "Actualizacion Hecha"
             resp_tipo = "bg-success"
             return render(request,'webpage/retiro.html',{'resp':resp,'resp_tipo':resp_tipo})
