@@ -1,0 +1,74 @@
+{% extends 'webpage/base.html' %}
+
+{% block venta-a %}active{% endblock %}
+
+{% block content %}
+<div class="container-xxl">
+    <div class="tabla-retiro overflow-auto">
+        <div class="row mb-3 align-items-center input-group">
+            <div class="form-floating">
+                <input type="number" id="txtventa" value="{%if numvta %}{{ numvta }}{%else%}0{%endif%}">
+                <lavel>Venta Nro°:</label>
+            </div>
+            <!--<input type="button" class="btn btn-secondary" value="Buscar Boleta" onclick="buscarVenta('#carrito',$('#txtventa').val())">-->
+        </div>
+
+        <div class="row">
+            <div class="col mb-3 input-group">
+                <div class="form-floating">
+                    <input type="number" id="txtbusqueda" name="txtBusqueda" class="form-control" placeholder="codigo">
+                    <label>Codigo</label>
+                </div>
+                <!--<input type="button" class="btn btn-secondary" value="Buscar"
+                    onclick="agrega_producto_venta('#carrito',$('#txtbusqueda').val())">-->
+            </div>
+
+        </div>
+        <form method="post">
+            {% csrf_token %}
+            <div class="row">
+                <table id="carrito" class="table table-sm table-hover table-bordered table-striped">
+                    <thead>
+                        <tr class="table-info">
+                            <td>Producto</td>
+                            <td>Cantidad</td>
+                            <td>Stock</td>
+                            <td>Codigo Producto</td>
+                            <td>Precio</td>
+                            <td>Eliminar</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+
+                </table>
+            </div>
+            <div class="row align-items-center">
+                <div class="col "></div>
+                <div class="col border bg-light">
+                    <h4>Total Venta:</h4>
+                    <h2 class="precios" id="total">0</h2>
+                    <input type="hidden" id="total-h" name="total-h" value="0">
+                    <input type="hidden" id="numvta" name="numvta" value="{{ numvta }}">
+                </div>
+                <div class="col input-group">
+                    <input type="submit" value="Cancelar" class="btn btn-secondary" name="btn-limpiar" id="btn-limpiar">
+                    <input type="submit" class="btn btn-success me-0" value="Confirmar Venta" name="btn-venta"
+                        id="btn-venta">
+                </div>
+            </div>
+
+
+        </form>
+    </div>
+</div>
+
+<script>
+    const node = document.getElementById("txtbusqueda");
+    node.addEventListener("keyup", ({ key }) => {
+        if (key === "Enter") {
+            agrega_producto_venta('#carrito', $('#txtbusqueda').val());
+        }
+    })
+</script>
+{% endblock %}

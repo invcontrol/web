@@ -1,0 +1,26 @@
+{% extends 'webpage/base.html' %}
+
+{% block reporte-a %}active{% endblock %}
+
+{% block content %}
+<div class="container-xxl">
+    <div class="row">
+        <div class="col cuadro m-3 mt-5">
+            <h2 class="centrado">Total activos en inventario</h2>
+            {{ barchart }}
+        </div>
+        <div class="col cuadro m-3 mt-5">
+            <h2 class="centrado">Distribucion entre Compras y Egresos</h2>
+            {{ piechart }}
+        </div>
+    </div>
+    <div class="row">
+        <div class="col cuadro m-3 mt-5">
+            <h2 class="centrado">Listado movimientos</h2>
+        </div>
+        <div class="col cuadro m-3 mt-5">
+            <h2>Movimientos esperados en base a historial</h2>
+        </div>
+    </div>
+</div>
+{% endblock %}

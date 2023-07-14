@@ -13,6 +13,6 @@ class Migration(migrations.Migration):
         migrations.AddField(
             model_name='tipounidad',
             name='cssclass',
-            field=models.CharField(default='in-kg', max_length=4),
+            field=models.CharField(default='in-kg', max_length=5),
         ),
     ]

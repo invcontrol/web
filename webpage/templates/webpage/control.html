@@ -11,12 +11,14 @@
                 {% csrf_token %}
                 <input type="hidden" value="{{ prod.id }}" name="id">
                 <div class="row mb-3">
-                    <div class="col-md-6">
-                        <div class="input-group">
-                            <span class="input-group-text">SKU</span>
-                            <input type="number" class="form-control" name="c-sku" value="{{ prod.sku }}">
-                            <input type="submit" class="btn btn-secondary" name="btn-buscar" value="Buscar">
-                        </div>
+                    <div class=" col input-group">
+                        <span class="input-group-text">SKU</span>
+                        <input type="number" class="form-control" name="c-sku" value="{{ prod.sku }}">
+                        <input type="submit" class="btn btn-secondary" name="btn-buscar" value="Buscar">
+                    </div>
+                    <div class="col input-group">
+                        <span class="input-group-text">Precio</span>
+                        <input type="number" class="form-control" name="txtPrecio" value="{{prod.precio}}">
                     </div>
                 </div>
                 <div class="row mb-3">
@@ -59,7 +61,7 @@
                     </div>
                     <div class="col input-group">
                         <span class="input-group-text">Bajo stock</span>
-                        <input name="txtBajoStock" class="form-control" type="text">
+                        <input name="txtBajoStock" class="form-control" type="text" value="{% if alerta %}{{alerta.nivel_bajo}}{%else%}0{%endif%}">
                     </div>
                 </div>
                 <div class="row mb-3">
@@ -71,7 +73,7 @@
                     </div>
                     <div class="col input-group">
                         <span class="input-group-text">Sobre stock</span>
-                        <input name="txtSobreStock" class="form-control" type="text">
+                        <input name="txtSobreStock" class="form-control" type="text" value="{% if alerta %}{{alerta.nivel_sobre}}{%else%}0{%endif%}">
                     </div>
                 </div>
                 <div class="row mb-3">
@@ -131,7 +133,7 @@
 
 {% block toast %}
 {% if resp != "" %}
-<div class="toast align-items-center text-white {{ resp_tipo }} border-0" role="alert" aria-live="assertive"
+<div class="notif toast align-items-center text-white {{ resp_tipo }} border-0" role="alert" aria-live="assertive"
     aria-atomic="true">
     <div class="d-flex">
         <div class="toast-body">

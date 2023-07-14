@@ -3,6 +3,7 @@ from unittest.util import _MAX_LENGTH
 from django.conf import settings
 from django.db import models
 from django.utils import timezone
+from datetime import date
 
 # Create your models here.
 class Item(models.Model):
@@ -14,7 +15,7 @@ class Item(models.Model):
     alerta_bajo = models.BooleanField(default=False)
     alerta_sobre = models.BooleanField(default=False)
     proveedor = models.ForeignKey('Proveedor',on_delete=models.CASCADE, default=1)
-
+    precio = models.IntegerField(default=1)
     def __str__(self):
         return self.nombre
     
@@ -30,10 +31,11 @@ class Proveedor(models.Model):
 
 
 class Alerta(models.Model):
-    sku = models.ForeignKey('Item',on_delete=models.CASCADE)
-    nivel_bajo = models.IntegerField()
-    nivel_sobre = models.IntegerField()
-
+    sku = models.IntegerField()
+    nivel_bajo = models.IntegerField(null=True)
+    nivel_sobre = models.IntegerField(null=True)
+    def __str__(self):
+        return self.id
 
 class TipoUnidad(models.Model):
     tipo = models.TextField(null=False)
@@ -41,3 +43,28 @@ class TipoUnidad(models.Model):
     cssclass = models.CharField(max_length=5,default="in-kg")
     def __str__(self):
         return self.abr
+    
+class RegistroMovimientos(models.Model):
+    tipo = models.ForeignKey('TipoMovimiento',on_delete=models.CASCADE)
+    sku = models.ForeignKey('Item',on_delete=models.CASCADE)
+    fecha = models.DateField()
+    stockbf = models.IntegerField()
+    stockaf = models.IntegerField()
+    preciobf = models.IntegerField()
+    precioaf = models.IntegerField()
+
+
+class TipoMovimiento(models.Model):
+    tipo = models.TextField(null=False)
+    abr = models.CharField(max_length=3, null=False)
+    cssclass = models.CharField(max_length=5)
+
+class Venta(models.Model):
+    fecha = models.DateField(default=timezone.now)
+    total = models.IntegerField(default=0)
+
+class DetalleVenta(models.Model):
+    venta = models.ForeignKey('Venta',on_delete=models.DO_NOTHING)
+    item = models.ForeignKey('Item',on_delete=models.DO_NOTHING)
+    cant = models.IntegerField(default=1)
+    precio = models.IntegerField(default=1)

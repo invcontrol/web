@@ -6,7 +6,7 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-2"></div>
-            <div class="col-8 cuadro">
+            <div class="col-8 cuadro centrado">
                 {% if user.is_authenticated %}
                 <h1>Bienvenido a INVCONTROL</h1>
                 <p>Usuario autentificado {{ user.username|upper }}</p>
@@ -16,8 +16,8 @@
                 {% else %}
                 <h1>Bienvenido a INVCONTROL</h1>
                 <p>Antes de poder usar el sistema debe iniciar sesion</p>
-                <a class="enl" href="{% url 'login' %}">Iniciar Sesion</a> | <a class="enl" href="{% url 'signup' %}">Crear
-                    Cuenta</a>
+                <a class="enl" href="{% url 'login' %}">Iniciar Sesion</a> <!--| <a class="enl" href="{% url 'signup' %}">Crear
+                    Cuenta</a>-->
                 {% endif %}
             </div>
             <div class="col-2"></div>

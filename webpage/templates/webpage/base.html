@@ -16,7 +16,9 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
         crossorigin="anonymous"></script>
-    
+    <script src="{% static 'chartkick/Chart.bundle.js' %}"></script>
+    <script src="{% static 'chartkick/chartkick.js' %}"></script>
+
 </head>
 
 <body>
@@ -24,7 +26,7 @@
         <nav class="navbar navbar-expand-lg navbar-light sombra" style="background-color: rgb(126, 166, 239);">
             <div class="container-fliud">
                 <a class="navbar-brand px-3" href="{% url 'index' %}">
-                    
+
                     INVCONTROL
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
@@ -36,11 +38,17 @@
             {% if user.is_authenticated %}
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                 <div class="navbar-nav px-3">
-                    
-                    <a href="{% url 'index' %}" class="nav-link {% block index-a %}{% endblock %}" aria-current="page">Inicio</a>
-                    <a href="{% url 'control' %}" class="nav-link {% block control-a %}{% endblock %}" aria-current="page">Control</a>
-                    <a href="{% url 'ingreso' %}" class="nav-link {% block ingreso-a %}{% endblock %}" aria-current="page">Ingreso Material</a>
-                    <a href="{% url 'retiro' %}" class="nav-link {% block retiro-a %}{% endblock %}" aria-current="page">Retiro Material</a>
+
+                    <a href="{% url 'index' %}" class="nav-link {% block index-a %}{% endblock %}"
+                        aria-current="page">Inicio</a>
+                    <a href="{% url 'venta' %}" class="nav-link {% block venta-a %}{% endblock %}"
+                        aria-current="page">Venta</a>
+                    <a href="{% url 'control' %}" class="nav-link {% block control-a %}{% endblock %}"
+                        aria-current="page">Control</a>
+                    <a href="{% url 'ingreso' %}" class="nav-link {% block ingreso-a %}{% endblock %}"
+                        aria-current="page">Ingreso Material</a>
+                    <a href="{% url 'retiro' %}" class="nav-link {% block retiro-a %}{% endblock %}"
+                        aria-current="page">Retiro Material</a>
                     <a href="{% url 'logout' %}" class="nav-link" aria-current="page">Logout</a>
                 </div>
             </div>
@@ -48,37 +56,67 @@
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                 <div class="navbar-nav px-3">
                     <a href="{% url 'index' %}" class="nav-link" aria-current="page">Inicio</a>
-                    <a href="{% url 'login' %}" class="nav-link {% block login-a %}{% endblock %}" aria-current="page">Login</a>
-                    <a href="{% url 'signup' %}" class="nav-link {% block signup-a %}{% endblock %}" aria-current="page">Registro</a>
+                    <a href="{% url 'login' %}" class="nav-link {% block login-a %}{% endblock %}"
+                        aria-current="page">Login</a>
+                    <a href="{% url 'signup' %}" class="nav-link {% block signup-a %}{% endblock %}"
+                        aria-current="page">Registro</a>
                 </div>
             </div>
             {% endif %}
             <span class="navbar-text px-3">{{ user.username|upper }}</span>
         </nav>
     </header>
-    <div aria-live="polite" aria-atomic="true" class="position-relative">
-        <div class="toast-container position-absolute top-0 end-0 p-3">
-            {% block toast %}
-            {% endblock %}
+    <div class="toast-container position-fixed top-0 end-0 p-3" style="z-index: 11">
+        {% block toast %}
+        {% endblock %}
+        <div id="bajoToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+            <div class="toast-header">
+                <strong class="me-auto">Alerta</strong>
+                <small>Bajo Stock</small>
+                <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+            </div>
+            <div class="toast-body">
+                <span id="bajoTxt"></span>
+            </div>
+        </div>
+        <div id="sobreToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+            <div class="toast-header">
+                <strong class="me-auto">Alerta</strong>
+                <small>Sobre Stock</small>
+                <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+            </div>
+            <div class="toast-body">
+                <span id="sobreTxt"></span>
+            </div>
+        </div>
+        <div id="ceroToast" class="toast " role="alert" aria-live="assertive" aria-atomic="true">
+            <div class="toast-header">
+                <strong class="me-auto">Critico</strong>
+                <small>Sin Stock</small>
+                <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+            </div>
+            <div class="toast-body">
+                <span id="ceroTxt"></span>
+            </div>
         </div>
     </div>
 
     {% block content %}
     {% endblock %}
 
-    
-    <script>
-    
-        /*$(document).ready(function () {
-            getDog();
-        })*/
 
-        var toastElList = [].slice.call(document.querySelectorAll('.toast'))
+    <script>
+
+        $(document).ready(function () {
+            checkAlerts();
+        });
+
+        var toastElList = [].slice.call(document.querySelectorAll('.notif'))
         var toastList = toastElList.map(function (toastEl) {
             return new bootstrap.Toast(toastEl)
         })
         toastList.forEach(toast => toast.show()); // This show them
-   
+
         console.log(toastList);
 
     </script>
